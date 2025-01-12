@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circulations</title>
+    <link rel="stylesheet" href="./circulations.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Circulations</h1>
+    </header>
+
+    <div id="links">
+        <h1>Api et liens</h1>
+        <p>
+            Github : <a href="https://github.com/4n0m4lie/Circulations">href="https://github.com/4n0m4lie/Circulations</a>
+        </p>
+        <p>
+            Url Covid eaux : <a href="https://tabular-api.data.gouv.fr/api/resources/2963ccb5-344d-4978-bdd3-08aaf9efe514/data/">https://tabular-api.data.gouv.fr/api/resources/2963ccb5-344d-4978-bdd3-08aaf9efe514/data/</a>
+        </p>
+        <p>
+            Url Covid : <a href="https://tabular-api.data.gouv.fr/api/resources/5c4e1452-3850-4b59-b11c-3dd51d7fb8b5/data/">https://tabular-api.data.gouv.fr/api/resources/5c4e1452-3850-4b59-b11c-3dd51d7fb8b5/data/</a>
+        </p>
+        <p>
+            Url Qualité de l'air : <a href="https://services3.arcgis.com/Is0UwT37raQYl9Jj/arcgis/rest/services/ind_grandest/FeatureServer/0/query?where=lib_zone%3D%27Nancy%27&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token=">https://services3.arcgis.com/Is0UwT37raQYl9Jj/arcgis/rest/services/ind_grandest/FeatureServer/0/query</a>
+        </p>
+        <p>
+            Url Vélos : <a href="https://api.cyclocity.fr/contracts/nancy/gbfs/gbfs.json">https://api.cyclocity.fr/contracts/nancy/gbfs/gbfs.json</a>
+        </p>
+        <p>
+            Url Météo : <a href="https://www.infoclimat.fr/public-api/gfs/json?_ll=48.6822,6.1862&_auth=ARsDFFIsBCZRfFtsD3lSe1Q8ADUPeVRzBHgFZgtuAH1UMQNgUTNcPlU5VClSfVZkUn8AYVxmVW0Eb1I2WylSLgFgA25SNwRuUT1bPw83UnlUeAB9DzFUcwR4BWMLYwBhVCkDb1EzXCBVOFQoUmNWZlJnAH9cfFVsBGRSPVs1UjEBZwNkUjIEYVE6WyYPIFJjVGUAZg9mVD4EbwVhCzMAMFQzA2JRMlw5VThUKFJiVmtSZQBpXGtVbwRlUjVbKVIuARsDFFIsBCZRfFtsD3lSe1QyAD4PZA%3D%3D&_c=19f3aa7d766b6ba91191c8be71dd1ab2">https://www.infoclimat.fr/public-api/gfs/json</a>
+        </p>
+    </div>
+    
+    <section>
+        <div id="meteo-container"></div>
+    </section>
+    <main>
+        <h1>Données eaux usées Maxéville</h1>
+        <section class="charts-section">
+            <canvas id="chartMaxeville"></canvas>
+        </section>
+        <h1>Données du covid</h1>
+        <section class="charts-section">
+            <canvas id="chartHosp"></canvas>
+            <canvas id="chartPos"></canvas>
+        </section>
+
+        <h1>Données de la circulation</h1>
+        <section id="map-section">
+            <div id="map"></div>
+        </section>
+    </main>
+
+    <span id="floating-air-quality">
+    </span>
+    
+    <!-- Import de Scripts -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./js/main.js" type="module"></script>
+</body>
+</html>
